@@ -153,14 +153,11 @@ def train(
 
             if checkpoint_filename is not None:
                 save_checkpoint(
-                    {
-                        "epoch": epoch,
-                        "model_state_dict": model.state_dict(),
-                        "optimizer_state_dict": optimizer.state_dict(),
-                        "val_loss": val_loss,
-                        "val_acc": val_acc,
-                    },
-                    checkpoint_filename,
+                model=model,
+                optimizer=optimizer,
+                epoch=epoch,
+                val_loss=val_loss,
+                filename=checkpoint_filename
                 )
 
         if verbose:
@@ -290,13 +287,11 @@ def train_seq2seq(
 
             if checkpoint_filename is not None:
                 save_checkpoint(
-                    {
-                        "epoch": epoch,
-                        "model_state_dict": model.state_dict(),
-                        "optimizer_state_dict": optimizer.state_dict(),
-                        "val_loss": val_loss,
-                    },
-                    checkpoint_filename,
+                model=model,
+                optimizer=optimizer,
+                epoch=epoch,
+                val_loss=val_loss,
+                filename=checkpoint_filename
                 )
 
         if verbose:

@@ -3,6 +3,13 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+*.tar.gz
+*.pt
+*.qmd
+data/
+*.pdf 
+*.docx
+
 # C extensions
 *.so
 
